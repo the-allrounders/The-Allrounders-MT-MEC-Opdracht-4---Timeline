@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic);
+
+html, body, ul, p, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background: #eeeeee;
+}
+
+#timeline {
+    position: relative;
+}
+
+#line {
+    border-left: 4px solid #4C4C4C;
+    position: absolute;
+    height: 2200px;
+    width: 4px;
+    left: 50%;
+    margin-left: -2px;
+    margin-top: -50px;
+}
+
+#timeline > ul > li {
+    margin-top: 50px;
+    width: 40%;
+    position: relative;
+}
+
+#timeline > ul > li:nth-child(odd) {
+    margin-left: 55%;
+}
+
+#timeline > ul > li:hover > div:first-child, #timeline > ul > li:hover > .item-container {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+}
+
+#timeline > ul > li > .item-container {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: 5%;
+    background: #ffffff;
+    border-radius: 2px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#timeline > ul > li > .item-container > ul > li {
+    color: #4C4C4C;
+    font-style: italic;
+    font-size: 12px;
+}
+
+#timeline > ul > li > div:first-child {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #00BCD4;
+    position: absolute;
+    right: -169px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#timeline > ul > li:nth-child(odd) > div:first-child {
+    right: 0;
+    left: -97px;
+}
+
+#timeline > ul > li > div:first-child > div {
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+#timeline > ul > li > div:first-child > div > span {
+    font-size: 12px;
+    color: #eeeeee;
+    display: block;
+}
+
+#timeline > ul > li > div:first-child > div > span:nth-child(2) {
+    font-size: 17px;
+}
+
+#timeline > ul > li > .item-container > h3 {
+    background: #00BCD4;
+    color: #eeeeee;
+}
+
+#timeline > ul > li:nth-child(odd) > .item-container > h3, #timeline > ul > li:nth-child(odd) > div:first-child {
+    background: #FF9800;
+}
+
+#timeline > ul > li > .item-container > span {
+    position: absolute;
+    font-weight: 200;
+    top: 0px;
+    right: 0px;
+    color: #ffffff;
+    font-style: italic;
+}
+
+#timeline > ul > li > .item-container > .item-image {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    padding: 0 0 10px;
+}
+
+#timeline > ul > li > .item-container > * {
+    padding: 10px;
+}
+
+.z-depth-1 {
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.z-depth-1:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
