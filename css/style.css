@@ -12,26 +12,28 @@ body {
 
 #timeline {
     position: relative;
+    min-width: 340px;
 }
 
 #line {
     border-left: 4px solid #4C4C4C;
     position: absolute;
-    height: 2200px;
+    height: calc(100% + 150px);
     width: 4px;
     left: 50%;
     margin-left: -2px;
     margin-top: -50px;
+    transition: all 0.2s ease-in-out;
 }
 
 #timeline > ul > li {
     margin-top: 50px;
-    width: 40%;
+    width: 100%;
     position: relative;
 }
 
 #timeline > ul > li:nth-child(odd) {
-    margin-left: 55%;
+    /*padding-left: 50%;*/
 }
 
 #timeline > ul > li:hover > div:first-child, #timeline > ul > li:hover > .item-container {
@@ -46,9 +48,14 @@ body {
     margin-left: 5%;
     background: #ffffff;
     border-radius: 2px;
-    width: 100%;
+    width: 40%;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    /*min-width: 230px;*/
+}
+
+#timeline > ul > li:nth-child(odd) > .item-container {
+    margin-left: 55%;
 }
 
 #timeline > ul > li > .item-container > ul > li {
@@ -63,16 +70,13 @@ body {
     height: 50px;
     background: #00BCD4;
     position: absolute;
-    right: -169px;
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-#timeline > ul > li:nth-child(odd) > div:first-child {
+    left: 0;
     right: 0;
-    left: -97px;
+    margin: 0 auto;
 }
 
 #timeline > ul > li > div:first-child > div {
@@ -129,4 +133,26 @@ body {
 
 .z-depth-1:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+@media all and (max-width: 760px) {
+    #line {
+        right: 12%;
+        left: initial;
+    }
+
+    #timeline > ul > li > .item-container {
+        width: 70%;
+    }
+
+    #timeline > ul > li:nth-child(odd) > .item-container {
+        margin-left: 5%;
+    }
+
+    #timeline > ul > li > div:first-child {
+        right: 12%;
+        margin: 0;
+        left: initial;
+        margin-right: -18px;
+    }
 }
