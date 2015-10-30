@@ -30,6 +30,7 @@ body {
     margin-top: 50px;
     width: 100%;
     position: relative;
+    list-style: none outside none;
 }
 
 #timeline > ul > li:nth-child(odd) {
