@@ -10,6 +10,10 @@ body {
     background: #eeeeee;
 }
 
+li {
+    list-style: none outside none;
+}
+
 #timeline {
     position: relative;
     min-width: 340px;
@@ -30,7 +34,6 @@ body {
     margin-top: 50px;
     width: 100%;
     position: relative;
-    list-style: none outside none;
 }
 
 #timeline > ul > li:nth-child(odd) {
