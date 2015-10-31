@@ -5,14 +5,6 @@ function initTimeline() {
     $("#timeline").on("click", "ul .item", checkItem);
 }
 
-function closeItems(target) {
-    $("#timeline > ul > li > .item-container").not(target).each(function (k, v) {
-        $(v).css({
-            maxHeight: 40
-        });
-    });
-}
-
 function checkItem(e) {
     target = $(e.currentTarget).find(".item-container");
     if (parseInt(target.css("max-height")) > 40) {
@@ -27,9 +19,17 @@ function checkItem(e) {
 
 function showItem(e) {
     var target = $(e.currentTarget).find(".item-container");
-    closeItems($(e.currentTarget));
+    closeItems();
     target.animate({
         maxHeight: 800
+    });
+}
+
+function closeItems() {
+    $("#timeline > ul > li > .item-container").each(function (k, v) {
+        $(v).css({
+            maxHeight: 40
+        });
     });
 }
 
@@ -37,6 +37,10 @@ function printItems(data) {
     var ul = $("<ul>");
     console.log(data);
     $.each(data.feed.entry, function (k, v) {
+        var sources = "";
+        if (v.gsx$sources.$t != "") {
+            sources = $("<ul>").append(replaceURLWithHTMLLinks(v.gsx$sources.$t));
+        }
         var li = $("<li>", {
             "class": "item"
         })
@@ -63,12 +67,11 @@ function printItems(data) {
                     .append($("<p>", {
                         "text": v.gsx$description.$t
                     }))
-                .append($("<ul>")
-                    .append(replaceURLWithHTMLLinks(v.gsx$sources.$t))).css({maxHeight: 0}));
+                .append(sources).css("max-height", 0));
         ul.append(li);
     });
     $("#timeline ul").replaceWith(ul);
-    closeItems(null);
+    closeItems();
 }
 
 function replaceURLWithHTMLLinks(text) {
