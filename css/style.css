@@ -12,6 +12,7 @@ body {
 
 li {
     list-style: none outside none;
+    word-wrap: break-word;
 }
 
 #timeline {
@@ -36,10 +37,6 @@ li {
     position: relative;
 }
 
-#timeline > ul > li:nth-child(odd) {
-    /*padding-left: 50%;*/
-}
-
 #timeline > ul > li:hover > div:first-child, #timeline > ul > li:hover > .item-container {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     cursor: pointer;
@@ -55,7 +52,6 @@ li {
     width: 40%;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    /*min-width: 230px;*/
 }
 
 #timeline > ul > li:nth-child(odd) > .item-container {
@@ -112,8 +108,8 @@ li {
 #timeline > ul > li > .item-container > span {
     position: absolute;
     font-weight: 200;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     color: #ffffff;
     font-style: italic;
 }
@@ -128,15 +124,6 @@ li {
 
 #timeline > ul > li > .item-container > * {
     padding: 10px;
-}
-
-.z-depth-1 {
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.z-depth-1:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 @media all and (max-width: 760px) {
@@ -155,8 +142,7 @@ li {
 
     #timeline > ul > li > div:first-child {
         right: 12%;
-        margin: 0;
+        margin: 0 -18px 0 0;
         left: initial;
-        margin-right: -18px;
     }
 }
