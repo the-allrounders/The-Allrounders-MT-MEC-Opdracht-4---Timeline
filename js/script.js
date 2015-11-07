@@ -1,7 +1,7 @@
 $(initTimeline);
 
 function initTimeline() {
-    $.getJSON("https://jsonp.afeld.me/?url=https://spreadsheets.google.com/feeds/list/1PtY6JJcwyV1nSwwRfVi1VvinXXk-yq3VZpqSCRb4A8U/od6/public/values?alt=json", printItems);
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1PtY6JJcwyV1nSwwRfVi1VvinXXk-yq3VZpqSCRb4A8U/od6/public/values?alt=json", printItems);
     $("#timeline").on("click", "ul .item", checkItem);
     $("#timeline").on("click", "ul .item a", function(e) {
         e.stopPropagation();
